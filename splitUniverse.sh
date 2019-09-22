@@ -10,8 +10,9 @@ if ! [ -z $1 ]
 fi
 if (($modBy < "1"))
         then
-        echo "Mod argument must be 2 or above, got "
+        echo "Mod argument must be 1 or above, got:"
 	echo $modBy
+	exit 1
 fi
 bigAssNumber=$(python ~/Code/GitHub/qrng/quantumRNG.py)
 if (($bigAssNumber < 0))
