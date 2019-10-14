@@ -15,7 +15,7 @@ if (($modBy < "1"))
 	exit 1
 fi
 bigAssNumber=$(python ~/Code/GitHub/qrng/quantumRNG.py)
-if (($bigAssNumber < 0))
+if (($bigAssNumber < "0"))
 	then
 	bigAssNumber=$bigAssNumber*-1
 fi
