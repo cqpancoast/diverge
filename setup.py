@@ -6,8 +6,9 @@ with open("README.md", "r") as f:
 
 setup(
     name="qflip-CQPANCOAST",
-    version="1.0.0",
+    version="1.0.2",
     author="Casey Pancoast",
+    description="Determinism is for losers - make your decisions using quantum mechanics.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/cqpancoast/quantum-flip",

@@ -8,15 +8,37 @@ I use this repository for Python packaging practice, as the function is so simpl
 
 ### Hey, *I'm* not a loser. What's going on?
 
-A lab at ANU is continually making measurements on the quantum vacuum and then putting binary versions of that up on the internet.
+A lab at ANU is continually making measurements on the quantum vacuum and then putting binary versions of that up on the internet. [Here it is!](https://qrng.anu.edu.au)
+
 I originally wrote this code by adapting an html parser from [here](https://github.com/pcragone/anurandom/blob/master/anurandom.py) for my students in a Computational Methods in Physics class that I was a course assistant for, Spring 2019.
 The script came later: flipping a coin was too deterministic for me, so I wrote a python script for the shell that gives me truly random quantum measurements!
+Most of the code is mine now, but I figure I should still credit the guy or gal.
 
-![Wow!](https://github.com/cqpancoast/qrng/blob/master/sample_output.png)
+### How do I use it?
 
-Need to decide what I'll have for dinner? If I have four options, I just assign each of them a number from 0 to 3, and type `qflip 4` into the prompt.
+Just type in qflip and then the number of things you have to choose between.
+It'll take the huge number from the ANU server and mod it by your number.
+If you don't spefcify a number, it'll mod 2.
 
-Need to decide what homework assignment I'll do first? If I have seventeen options... well, you get the point.
+```shell
+$ qflip
+0
+$ qflip
+1
+$ qfilp 27
+13
+$ qflip 0      # This will throw a ValueError.
+$ qflip -1     # So will this...
+$ qflip beans  # ...and this.
+$ qflip 1      # This is fine, though not useful.
+0
+```
+
+Need to decide what I'll have for dinner?
+If I have four options, I just assign each of them a number from 0 to 3, and type `qflip 4` into the prompt.
+
+Need to decide what homework assignment I'll do first?
+If I have seventeen options... well, you get the point.
 
 ## The Physics
 
@@ -44,9 +66,18 @@ Debating interpretations of quantum mechanics is exhuasting, so if you're lookin
 
 First of all, just ask! If you don't, you'll always be wondering what happened, and the worst that can happen is you get some practice with rejection.
 
-Anyway, just run `pip install qflip` or something.
+It's on test pypi right now, because it's not a serious thing. Just run `pip install -i https://test.pypi.org/simple/ qflip-CQPANCOAST`.
+You can find other versions of the project at the [pypi page](https://test.pypi.org/project/qflip-CQPANCOAST/).
 
 ### Nevermind, this actually sucks, and I want to uninstall it.
 
-You guessed it: `pip uninstall qflip`.
+Go ahead and `pip uninstall qflip-CQPANCOAST`.
+
+## Dear reader, there are so many people smarter than I am.
+
+If you're looking to use the ANU quantum random number server for actual work, don't use this repo — this is just a silly thing I made, functional though it is.
+[This project](https://github.com/lmacken/quantumrandom), on the other hand, has a wide array of utility.
+Check it out!
+
+[This](https://www.youtube.com/watch?v=oHg5SJYRHA0) is also pretty cool.
 
