@@ -2,11 +2,13 @@
 
 Make your decisions by taking advantage of splits in the universe, becasue flipping a coin is for losers.
 
-## That's a bold claim. What's going on?
+## The Code
+
+### That's a bold claim. What's going on?
 
 A lab at ANU is continually making measurements on the quantum vacuum and then putting binary versions of that up on the internet.
 I originally wrote this code by adapting an html parser from [here](https://github.com/pcragone/anurandom/blob/master/anurandom.py) for my students in a Computational Methods in Physics class that I was a course assistant for, Spring 2019.
-The shell script came later: flipping a coin was too deterministic for me, so I wrote a shell script that uses those measurements to let me make all decisions at once!
+The script came later: flipping a coin was too deterministic for me, so I wrote a python script for the shell that gives me truly random quantum measurements!
 
 ![Wow!](https://github.com/cqpancoast/qrng/blob/master/sample_output.png "splitting the universe")
 
@@ -14,7 +16,9 @@ Need to decide what I'll have for dinner? If I have four options, I just assign 
 
 Need to decide what homework assignment I'll do first? If I have seventeen options... well, you get the point.
 
-## No, but really, what's going on here?
+## The Physics
+
+### No, but really, what's going on here?
 
 First of all, there's no way of testing the experimentally, but many (including me) are of the opinion that thinking about this any other way requires mangling the beautiful, beautiful math.
 
@@ -27,7 +31,9 @@ If you DO want further explanation, first do some reading on quantum mechanics (
 Again, no way of testing this experimentally, but it sure makes the most sense to me.
 Debating interpretations of quantum mechanics is exhuasting, so if you're looking for arguments one way or the other, you're free to look online.
 
-## Okay, I'm convinced. How do I download this so I can decide whether to ask this one guy/gal out?
+## Install
+
+### Okay, I'm convinced. How do I download this so I can decide whether to ask this one guy/gal out?
 
 First of all, just ask! If you don't, you'll always be wondering what happened, and the worst that can happen is you get some practice with rejection.
 
@@ -37,8 +43,8 @@ I choose `~/.diverge` as the directory to install this in, but you're free to do
 First, clone this repository into a dot dir in your home directory.
 
 ```shell
-INSTALL_DIR="~/.diverge"  # This can be anything you want, but I prefer this one
-git clone https://www.github.com/cqpancoast/diverge $INSTALL_DIR
+INSTALL_DIR="$HOME/.diverge"  # This can be anything you want, but I prefer this one
+git clone https://www.github.com/cqpancoast/diverge.git $INSTALL_DIR
 ```
 
 Then, add alias for the main diverge script to appropriate rc/profile file, so it's easily callable.
@@ -48,27 +54,28 @@ For more info on what rc and profile files are, check out [here](https://www.lin
 ```shell
 ALIAS_DESC='# Diverge script variables: from https://www.github.com/cqpancoast/diverge'
 ALIAS_SCRIPT_VAR="DIVERGE_DIR=$INSTALL_DIR"
-ALIAS_STRING='alias diverge="sh $DIVERGE_DIR/diverge.sh"'
+ALIAS_STRING='alias diverge="python $DIVERGE_DIR/diverge.py"'
 ```
 
-If you want to add this script to multiple rc/profile files, run the below section multiple times.
+If you want to add support for this script to multiple rc/profile files, run the below section multiple times.
 
 ```shell
 if [ -z "$RC_FILE" ]; then
-  echo "You have not set an RC_FILE varaible. Read the directions!"
+  echo "You have not set an RC_FILE varaible. Read the directions\!"
   exit 1
+fi
 
 echo "" >> $RC_FILE
-echo ALIAS_DESC >> $RC_FILE
-echo ALIAS_SCRIPT_VAR >> $RC_FILE
-echo ALIAS_STRING >> $RC_FILE
+echo $ALIAS_DESC >> $RC_FILE
+echo $ALIAS_SCRIPT_VAR >> $RC_FILE
+echo $ALIAS_STRING >> $RC_FILE
 source $RC_FILE
 ```
 
 That's it! You should be ready to go.
 
-## Nevermind, this actually sucks, and I want to uninstall it.
+### Nevermind, this actually sucks, and I want to uninstall it.
 
-Thankfully, the install procedure above wasn't anything complicated.
+Fortunately for you, the install procedure above wasn't anything complicated.
 Just run `rm -rf $DIVERGE_DIR` and then delete the lines from the rc/profile file(s) you chose.
 
