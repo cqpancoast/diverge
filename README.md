@@ -2,6 +2,11 @@
 
 Flipping a coin is for losers; use quantum mechanics instead.
 
+## Install
+
+It's on pypi [here](https://pypi.org/project/qflip-CQPANCOAST/): `pip install qflip-CQPANCOAST`.
+To uninstall, `pip uninstall qflip-CQPANCOAST`.
+
 I use this repository for Python packaging practice, as the function is so simple.
 
 ## The Code
@@ -23,6 +28,8 @@ If you don't spefcify a number, it'll mod 2.
 ```shell
 $ qflip
 0
+$ qflip
+1
 $ qflip
 1
 $ qfilp 27
@@ -59,19 +66,6 @@ If you want further explanation, first do some reading on quantum mechanics ([Th
 
 Again, no way of testing this experimentally, but it sure makes the most sense to me.
 Debating interpretations of quantum mechanics is exhuasting, so if you're looking for arguments one way or the other, you're free to look online.
-
-## Install
-
-### Okay, I'm convinced. How do I download this so I can decide whether to ask this one guy/gal out?
-
-First of all, just ask! If you don't, you'll always be wondering what happened, and the worst that can happen is you get some practice with rejection.
-
-It's on test pypi right now, because it's not a serious thing. Just run `pip install -i https://test.pypi.org/simple/ qflip-CQPANCOAST`.
-You can find other versions of the project at the [pypi page](https://test.pypi.org/project/qflip-CQPANCOAST/).
-
-### Nevermind, this actually sucks, and I want to uninstall it.
-
-Go ahead and `pip uninstall qflip-CQPANCOAST`.
 
 ## Dear reader, there are so many people smarter than I am.
 
