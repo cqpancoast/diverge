@@ -22,8 +22,13 @@ Most of the code is mine now, but I figure I should still credit the guy or gal.
 ### How do I use it?
 
 Just type in qflip and then the number of things you have to choose between.
-It'll take the huge number from the ANU server and mod it by your number.
-If you don't spefcify a number, it'll mod 2.
+The program will:
+- take a huge number from the ANU quantum random number generator,
+- split it into a bunch of still big ones),
+- store those numbers in a json file in `~/.qflip`,
+- and mod it by the number you specify.
+
+If you don't spefcify a number, it'll choose 2.
 
 ```shell
 $ qflip
