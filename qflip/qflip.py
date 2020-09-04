@@ -21,12 +21,11 @@ def main():
 
     # Parses ANU page into integer.
     # Adapted: https://github.com/pcragone/anurandom/blob/master/anurandom.py
-    anu_url = 'http://150.203.48.55/RawBin.php'
+    anu_url = 'https://qrng.anu.edu.au/wp-content/plugins/colours-plugin/get_block_binary.php'
     with urlopen(anu_url) as page:
 
         # Returns the html of the page as a string, finds the number.
-        page_html = page.read().decode()
-        measurement_str = page_html.split('<td>\n')[1].split('</td>')[0]
+        measurement_str = page.read().decode()
 
         # Casts binary string to int.
         base = 2
